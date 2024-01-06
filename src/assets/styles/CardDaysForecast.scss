@@ -1,0 +1,34 @@
+.days {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 414px; 
+
+  &__title {
+    font-size: 32px;
+  }
+
+  &__forecast {
+  }
+
+  &__forecast-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__forecast-icon {
+    max-width: 60px;
+  }
+
+  &__forecast-temperature {
+    margin: 0 43px;
+    font-size: 24px;
+  }
+
+  &__forecast-date {
+    font-size: 20px;
+
+  }
+}

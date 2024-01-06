@@ -1,0 +1,108 @@
+.current {
+  display: grid;
+  grid-template-columns: 242px 242px 242px;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__temperature {
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__temperature-now {
+    font-size: 80px;
+  }
+
+  &__temperature-feels {
+    font-size: 20px;
+
+    span {
+      font-size: 32px;
+    }
+  }
+
+  &__sun {
+    margin-top: 40px;
+  }
+
+  &__sun-sunrise {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 48px 90px;
+    grid-template-rows: auto auto;
+    gap: 4px 10px;
+    &:nth-child(n + 2) {
+      margin-top: 19px;
+    }
+  }
+
+  &__sun-icon {
+    grid-row: span 2;
+    max-width: 48px;
+    max-height: 48px;
+    img {
+      width: 100%;
+      object-fit: none;
+    }
+  }
+
+  &__sun-title {
+    font-size: 20px;
+  }
+
+  &__sun-time {
+    font-size: 16px;
+  }
+
+  &__cloudiness {
+  }
+
+  &__cloudiness-icon {
+    width: 224px;
+    height: 224px;
+  }
+
+  &__cloudiness-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  &__information {
+    display: grid;
+    grid-template-columns: 110px 110px;
+    grid-template-rows: 135px  135px;
+    gap: 13px;
+    // padding: 20px 0;
+  }
+
+  &__information-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &__imformation-icon {
+  }
+
+  &__imformation-template {
+    margin-top: 10px;
+  }
+
+  &__imformation-title {
+    margin-top: 10px;
+  }
+}

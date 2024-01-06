@@ -1,0 +1,54 @@
+.hourly {
+  padding: 0 80px;
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    // margin-top: 12px;
+  }
+
+  &__list {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    padding: 15px 40px;
+    background-color: rgba(55, 54, 54, 1);
+    border-radius: 40px;
+    &:nth-child(n + 2) {
+      margin-left: 15px;
+    }
+  }
+
+  &__time {
+    font-size: 24px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &__icon {
+    margin-top: 10px;
+    max-width: 80px;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__temperature {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &__wind {
+    max-width: 80px;
+    margin-top: 10px;
+  }
+
+  &__speed {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
