@@ -1,6 +1,6 @@
 <template>
   <div class="card-time">
-    <div class="card-time__location">Athens</div>
+    <div class="card-time__location">{{ }}</div>
     <div class="card-time__time">{{ formatterTime.format(time) }}</div>
     <div class="card-time__date">{{ formatterDate.format(date) }}</div>
   </div>
@@ -19,5 +19,5 @@ const formatterDate = new Intl.DateTimeFormat("en-US", {
 });
 </script>
 <style lang="scss" scoped>
-@import "../../assets/styles/CardTime.scss";
+@import "@/assets/styles/CardTime.scss";
 </style>
