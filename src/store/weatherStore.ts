@@ -20,13 +20,13 @@ export const useWeatherStore = defineStore("weather", {
     hourlyForecast: null,
   }),
   actions: {
-    // loadForecast,
-    async loadCurrentWeatherStore() {
+    async loadCurrentWeatherStore(q = "London") {
       try {
-        const res = await loadCurrentWeather();
+        const res = await loadCurrentWeather({q});
         this.currentWeather = res || null;
       } catch (error) {
         console.error(error);
+        this.currentWeather = null;
       }
     },
 

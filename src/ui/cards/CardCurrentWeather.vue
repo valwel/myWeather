@@ -42,13 +42,13 @@
     <div class="current__wrapper">
       <div  class="current__information">
         <div class="current__information-data" v-for="(items, i) in getCurrentWeather.information" :key="items.title">
-          <div class="current__imformation-icon">
+          <div class="current__information-icon">
             <img :src="getCurrentWeather.information[i].icon" alt="" />
           </div>
-          <div class="current__imformation-template">
+          <div class="current__information-template">
             {{ getCurrentWeather.information[i].template }}
           </div>
-          <div class="current__imformation-title">
+          <div class="current__information-title">
             {{ getCurrentWeather.information[i].title }}
           </div>
         </div>
