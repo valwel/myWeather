@@ -66,9 +66,6 @@
     font-size: 16px;
   }
 
-  &__cloudiness {
-  }
-
   &__cloudiness-icon {
     width: 224px;
     height: 224px;
@@ -84,7 +81,6 @@
     grid-template-columns: 110px 110px;
     grid-template-rows: 135px  135px;
     gap: 13px;
-    // padding: 20px 0;
   }
 
   &__information-data {
@@ -95,14 +91,7 @@
 
   }
 
-  &__imformation-icon {
-  }
-
   &__imformation-template {
-    margin-top: 10px;
-  }
-
-  &__imformation-title {
-    margin-top: 10px;
+    margin: 10px 0;
   }
 }
