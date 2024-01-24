@@ -39,40 +39,10 @@ const { getCurrentWeather } = storeToRefs(store);
 </script>
 <style lang="scss" scoped>
 .cards {
-  // display: grid;
-  // grid-template-columns: repeat(5, 1fr);
-  // grid-template-rows: repeat(5, 1fr);414px 870px  336px 336px
-  // grid-template-columns: 510px 780px 414px 870px;
-  // grid-template-rows: 370px 336px;
-  // gap: 50px;
-  // display: flex;
-  // flex-wrap: wrap;
-
-  // grid-template-areas: 
-  // "a b"
-  // "c d";
   &__wrapper {
     display: flex;
     width: 100%;
     margin-top: 50px;
   }
-}
-
-
-.a {
-  // grid-area: a;
-}
-
-.b {
-  // grid-area: b;
-}
-
-.c {
-  // grid-area: c;
-  // grid-column: span 2;
-}
-
-.d {
-  // grid-area: d;
 }
 </style>

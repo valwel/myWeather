@@ -8,6 +8,7 @@ export interface ICurrentWeather {
   humidity: number;
   wind: number;
   pressure: number;
+  city: string
   uv: number;
   information: IInformation[]
 }

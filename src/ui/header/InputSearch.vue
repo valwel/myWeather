@@ -11,20 +11,22 @@
       placeholder="Search for your preffered city..."
     />
     <button class="search__button">
-      <img src="../../assets/images/search.svg" alt="" />
+      <img src="@/assets/images/search.svg" alt="" />
     </button>
   </form>
 </template>
 <script setup lang="ts">
-import { useWeatherStore } from '@/store/weatherStore';
-import { ref } from 'vue';
+import { useWeatherStore } from "@/store/weatherStore";
+import { ref } from "vue";
 
 const store = useWeatherStore();
-const city = ref('')
+const city = ref("");
 function onSubmit() {
-  store.loadCurrentWeatherStore(city.value)
+  store.loadCurrentWeatherStore(city.value);
+  store.loadForecastStore(city.value);
+  city.value = ''
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/styles/InputSearch.scss";
+@import "@/assets/styles/InputSearch.scss";
 </style>

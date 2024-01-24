@@ -30,9 +30,9 @@ export const useWeatherStore = defineStore("weather", {
       }
     },
 
-    async loadForecastStore() {
+    async loadForecastStore(q = "London") {
       try {
-        const {daysForecast, hourlyForecast} = await loadForecast();
+        const {daysForecast, hourlyForecast} = await loadForecast({q});
         this.daysForecast = daysForecast;
         this.hourlyForecast = hourlyForecast;
       } catch (error) {

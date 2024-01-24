@@ -26,7 +26,7 @@
           </div>
           <div class="current__sun-title">Sunset</div>
           <div class="current__sun-time">
-            {{ new Date(getCurrentWeather.sunset).toLocaleTimeString() }}
+            {{ new Date(1970, 0, 1).setSeconds(getCurrentWeather.sunset) }}
           </div>
         </div>
       </div>

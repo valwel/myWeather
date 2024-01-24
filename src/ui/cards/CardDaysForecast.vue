@@ -13,22 +13,12 @@
   </div>
 </template>
 <script setup lang="ts">
-import { loadForecast } from "@/api/forecastService";
-// import { daysForecast } from "@/api/forecastService";
-import { IDaysForecast } from "@/models/forecastService.interface";
 import { useWeatherStore } from "@/store/weatherStore";
 import { formatTemperature } from "@/utils/formatTemperature";
 import { storeToRefs } from "pinia";
-import { onBeforeMount, ref } from "vue";
-const data = ref<IDaysForecast[]>();
+
 const store = useWeatherStore();
 const { getDaysForecast } = storeToRefs(store);
-console.log(getDaysForecast)
-// onBeforeMount(async () => {
-//   const {daysForecast} = await loadForecast()
-//   data.value = daysForecast
-//   console.log(data)
-// })
 </script>
 <style lang="scss" scoped>
 @import "@/assets/styles/CardDaysForecast.scss";
