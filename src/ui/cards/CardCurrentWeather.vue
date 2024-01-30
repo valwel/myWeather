@@ -17,7 +17,7 @@
           </div>
           <div class="current__sun-title">Sunrise</div>
           <div class="current__sun-time">
-            {{ new Date(getCurrentWeather.sunrise).toLocaleTimeString() }}
+            {{ new Date(getCurrentWeather.sunrise * 1000 + getCurrentWeather.timezone * 1000).toUTCString().substr(-12, 8) }}
           </div>
         </div>
         <div class="current__sun-sunrise">
@@ -26,7 +26,7 @@
           </div>
           <div class="current__sun-title">Sunset</div>
           <div class="current__sun-time">
-            {{ new Date(1970, 0, 1).setSeconds(getCurrentWeather.sunset) }}
+            {{ new Date(getCurrentWeather.sunset * 1000 + getCurrentWeather.timezone * 1000).toUTCString().substr(-12, 8) }}
           </div>
         </div>
       </div>
@@ -63,6 +63,8 @@ import { storeToRefs } from 'pinia'
 
 const store = useWeatherStore();
 const { getCurrentWeather } = storeToRefs(store);
+
+console.log(getCurrentWeather)
 </script>
 <style lang="scss" scoped>
 @import "@/assets/styles/CardCurrentWeather.scss";

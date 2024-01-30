@@ -16,7 +16,7 @@ export async function loadCurrentWeather(params: ICurrentWeatherParams = {q: 'Lo
     const currentWeatherResponse = await axios.get<ICurrentWeatherResponse>(
       "https://api.openweathermap.org/data/2.5/weather", {params: currentParams}
     );
-    const { sys, main, weather, wind, name } = currentWeatherResponse.data
+    const { sys, main, weather, wind, name, timezone, dt } = currentWeatherResponse.data
     return {
       temp: main.temp,
       feelsLike: main.feels_like,
@@ -28,6 +28,8 @@ export async function loadCurrentWeather(params: ICurrentWeatherParams = {q: 'Lo
       wind: wind.speed,
       pressure: main.pressure,
       city: name,
+      timezone: timezone,
+      date: dt,
       uv: 1,
       information: [
         {
