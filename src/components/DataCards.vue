@@ -43,6 +43,10 @@ const { getCurrentWeather } = storeToRefs(store);
     display: flex;
     width: 100%;
     margin-top: 50px;
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
   }
 }
 </style>

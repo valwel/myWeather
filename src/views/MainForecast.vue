@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <HeaderContent/>
+    <HeaderContent />
     <DataCards />
   </div>
 </template>
@@ -18,8 +18,16 @@ onBeforeMount(() => {
 </script>
 <style lang="scss" scoped>
 .container {
-  height: 100vh;
-  padding: 63px 78px;
+  padding: 63px 78px 10px 78px;
   background: linear-gradient(110deg, #383838 0%, #111111 71.82%);
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 10px 10px;
+  }
+
+  @media (max-width: 567px) {
+    padding: 5px 5px;
+  }
 }
 </style>

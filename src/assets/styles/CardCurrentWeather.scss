@@ -1,7 +1,12 @@
 .current {
-  display: grid;
-  grid-template-columns: 242px 242px 242px;
+  width: 100%;
+  display: flex;
   justify-content: center;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+
+  }
 
   &__wrapper {
     display: flex;
@@ -21,7 +26,9 @@
   }
 
   &__temperature-now {
-    font-size: 70px;
+    font-size: 40px;
+    white-space: nowrap;
+    text-align: center;
   }
 
   &__temperature-feels {

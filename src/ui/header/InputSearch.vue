@@ -8,7 +8,7 @@
       id=""
       required
       pattern=".{1,}"
-      placeholder="Search for your preffered city..."
+      placeholder="Search city..."
     />
     <button class="search__button">
       <img src="@/assets/images/search.svg" alt="" />

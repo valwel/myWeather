@@ -7,12 +7,15 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  white-space: nowrap;
 }
 
 li {

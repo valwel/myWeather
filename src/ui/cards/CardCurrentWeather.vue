@@ -34,7 +34,7 @@
     <div class="current__wrapper">
       <div class="current__cloudiness">
         <div class="current__cloudiness-icon">
-          <img :src="`https://openweathermap.org/img/wn/${getCurrentWeather.icon}@2x.png`" alt="" />
+          <img :src="`https://openweathermap.org/img/wn/${getCurrentWeather.icon}@4x.png`" alt="" />
         </div>
         <div class="current__cloudiness-title">{{ getCurrentWeather.description }}</div>
       </div>
