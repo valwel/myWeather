@@ -1,7 +1,17 @@
 <template>
   <router-view />
 </template>
+<script setup lang="ts">
+import { modeStore } from '@/store/modeStore';
+import { storeToRefs } from 'pinia';
+import { watch } from 'vue';
 
+const mode = modeStore();
+const { getMode } = storeToRefs(mode);
+watch(getMode, (isDark) => {
+  isDark ? document.body.classList.remove('white') : document.body.classList.add('white')
+}, {immediate: true}) 
+</script>
 <style lang="scss">
 #app {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

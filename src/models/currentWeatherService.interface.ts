@@ -16,7 +16,8 @@ export interface ICurrentWeather {
 }
 
 export interface IInformation {
-  icon?: string;
+  icon: string;
+  secondaryIcon: string;
   template: string;
   title: string;
 }

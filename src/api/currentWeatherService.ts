@@ -34,21 +34,25 @@ export async function loadCurrentWeather(params: ICurrentWeatherParams = {q: 'Lo
       information: [
         {
           icon: "./humidity.svg",
+          secondaryIcon: "./humidityDark.svg",
           template: main.humidity + "%",
           title: "Humidity",
         },
         {
           icon: "./wind.svg",
+          secondaryIcon: "./windDark.svg",
           template: wind.speed + "m/s",
           title: "Wind Speed",
         },
         {
           icon: "./pressure.svg",
+          secondaryIcon: "./pressureDark.svg",
           template: main.pressure + "hPa",
           title: "Pressure",
         },
         {
           icon: "./uv.svg",
+          secondaryIcon: "./uvDark.svg",
           template: "1",
           title: "UV",
         },

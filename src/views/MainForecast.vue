@@ -17,6 +17,12 @@ onBeforeMount(() => {
 });
 </script>
 <style lang="scss" scoped>
+body.white {
+  .container {
+    background: linear-gradient(260deg, #383838 0%, #ffffff 71.82%);
+  }
+}
+
 .container {
   padding: 63px 78px 10px 78px;
   background: linear-gradient(110deg, #383838 0%, #111111 71.82%);
