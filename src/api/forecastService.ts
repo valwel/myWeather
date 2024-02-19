@@ -12,10 +12,6 @@ const formatterDate = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   month: "short",
 });
-const formatterTime = new Intl.DateTimeFormat("ru", {
-  hour: "numeric",
-  minute: "numeric",
-});
 
 interface IForecastParams {
   q?: string;
