@@ -20,7 +20,6 @@ const formatterDate = new Intl.DateTimeFormat("en-US", {
 });
 const store = useWeatherStore();
 const { getCurrentWeather } = storeToRefs(store);
-console.log(getCurrentWeather)
 </script>
 <style lang="scss" scoped>
 .card-time {

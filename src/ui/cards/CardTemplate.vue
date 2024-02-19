@@ -16,7 +16,7 @@ body.white {
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  background: #444;
+  background: #777;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
   padding: 16px;
   color: #fff;

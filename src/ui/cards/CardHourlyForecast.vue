@@ -21,16 +21,16 @@ import { useWeatherStore } from '@/store/weatherStore';
 import { formatTemperature } from "@/utils/formatTemperature";
 import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
+import { formatTimeFromTimestamp } from "@/utils/formatTimeFromTimestamp";
 
 const store = useWeatherStore();
 const { getHourlyForecast, getCurrentWeather } = storeToRefs(store);
-console.log(getCurrentWeather.value?.sunset);
 
-const sunset = computed(() => getCurrentWeather.value ? new Date(getCurrentWeather.value.sunset * 1000).getUTCHours() + getCurrentWeather.value.timezone / 3600 : '');
-const sunrise = computed(() => getCurrentWeather.value ? new Date(getCurrentWeather.value.sunrise * 1000).getUTCHours() + getCurrentWeather.value.timezone / 3600 : '');
+const sunset = computed(() => getCurrentWeather.value ? formatTimeFromTimestamp(getCurrentWeather.value.sunset, getCurrentWeather.value.timezone).substring(0,2) : '');
+const sunrise = computed(() => getCurrentWeather.value ? formatTimeFromTimestamp(getCurrentWeather.value.sunrise, getCurrentWeather.value.timezone).substring(0,2) : '');
 function getIsNight(time: string) {
   if (!getCurrentWeather.value) return false
-  return sunset.value < time.split(':')[0] || sunrise.value > time.split(':')[0]
+  return +sunset.value < +time.split(':')[0] || +sunrise.value > +time.split(':')[0]
 }
 </script>
 <style lang="scss" scoped>
@@ -77,7 +77,7 @@ body.white {
 
   &__item {
     padding: 15px 40px;
-    background-color: rgba(55, 54, 54, 1);
+    background-color: #666;
     border-radius: 40px;
 
     &:nth-child(n + 2) {

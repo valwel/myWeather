@@ -18,7 +18,7 @@
           </div>
           <div class="current__sun-title">Sunrise</div>
           <div class="current__sun-time">
-            {{ new Date(getCurrentWeather.sunrise * 1000 + getCurrentWeather.timezone * 1000).toUTCString().substr(-12, 8) }}
+            {{ formatTimeFromTimestamp(getCurrentWeather.sunrise, getCurrentWeather.timezone) }}
           </div>
         </div>
         <div class="current__sun-sunrise">
@@ -28,7 +28,7 @@
           </div>
           <div class="current__sun-title">Sunset</div>
           <div class="current__sun-time">
-            {{ new Date(getCurrentWeather.sunset * 1000 + getCurrentWeather.timezone * 1000).toUTCString().substr(-12, 8) }}
+            {{ formatTimeFromTimestamp(getCurrentWeather.sunset, getCurrentWeather.timezone) }}
           </div>
         </div>
       </div>
@@ -63,13 +63,12 @@ import { formatTemperature } from "@/utils/formatTemperature";
 import { useWeatherStore } from "@/store/weatherStore";
 import { storeToRefs } from 'pinia'
 import { modeStore } from "@/store/modeStore";
+import { formatTimeFromTimestamp } from "@/utils/formatTimeFromTimestamp"
 
 const mode = modeStore();
 const { getMode } = storeToRefs(mode);
 const store = useWeatherStore();
 const { getCurrentWeather } = storeToRefs(store);
-
-console.log(getCurrentWeather)
 </script>
 <style lang="scss" scoped>
 .current {

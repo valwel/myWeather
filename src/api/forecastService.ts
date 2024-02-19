@@ -5,6 +5,7 @@ import {
   IForecastData,
   IHourlyForecast,
 } from "@/models/forecastService.interface";
+import { formatTimeFromTimestamp } from "@/utils/formatTimeFromTimestamp";
 
 const formatterDate = new Intl.DateTimeFormat("en-US", {
   weekday: "long",
@@ -56,10 +57,10 @@ const mapDaysForecast = (list: IForecastResponse['list']): IDaysForecast[] => ([
   }
 ]);
 
-const mapHourlyForecast = (list: IForecastResponse['list']): IHourlyForecast[] => ([
+const mapHourlyForecast = (list: IForecastResponse['list'], timezone: number): IHourlyForecast[] => ([
   {
     id: 0,
-    time: formatterTime.format(new Date(list[0].dt_txt)),
+    time: formatTimeFromTimestamp(list[0].dt, timezone),
     icon: list[0].weather[0].icon,
     temperature: list[0].main.temp,
     windDeg: list[0].wind.deg,
@@ -67,7 +68,7 @@ const mapHourlyForecast = (list: IForecastResponse['list']): IHourlyForecast[] =
   },
   {
     id: 1,
-    time: formatterTime.format(new Date(list[1].dt_txt)),
+    time: formatTimeFromTimestamp(list[1].dt, timezone),
     icon: list[1].weather[0].icon,
     temperature: list[1].main.temp,
     windDeg: list[1].wind.deg,
@@ -75,7 +76,7 @@ const mapHourlyForecast = (list: IForecastResponse['list']): IHourlyForecast[] =
   },
   {
     id: 2,
-    time: formatterTime.format(new Date(list[2].dt_txt)),
+    time: formatTimeFromTimestamp(list[2].dt, timezone),
     icon: list[2].weather[0].icon,
     temperature: list[2].main.temp,
     windDeg: list[2].wind.deg,
@@ -83,7 +84,7 @@ const mapHourlyForecast = (list: IForecastResponse['list']): IHourlyForecast[] =
   },
   {
     id: 3,
-    time: formatterTime.format(new Date(list[3].dt_txt)),
+    time: formatTimeFromTimestamp(list[3].dt, timezone),
     icon: list[3].weather[0].icon,
     temperature: list[3].main.temp,
     windDeg: list[3].wind.deg,
@@ -91,7 +92,7 @@ const mapHourlyForecast = (list: IForecastResponse['list']): IHourlyForecast[] =
   },
   {
     id: 4,
-    time: formatterTime.format(new Date(list[4].dt_txt)),
+    time: formatTimeFromTimestamp(list[4].dt, timezone),
     icon: list[4].weather[0].icon,
     temperature: list[4].main.temp,
     windDeg: list[4].wind.deg,
@@ -112,9 +113,9 @@ export async function loadForecast(
       "https://api.openweathermap.org/data/2.5/forecast",
       { params: forecastParams }
     );
-    const { list } = forecastResponse.data;
+    const { list, city } = forecastResponse.data;
     const daysForecast = mapDaysForecast(list);
-    const hourlyForecast = mapHourlyForecast(list);
+    const hourlyForecast = mapHourlyForecast(list, city.timezone);
     return {
       daysForecast, hourlyForecast
     }
