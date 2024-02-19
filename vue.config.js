@@ -5,5 +5,5 @@ module.exports = defineConfig({
   base: "/myWeather/",
 })
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/chat/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/myWeather/" : "/",
 };
